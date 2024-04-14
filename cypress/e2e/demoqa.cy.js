@@ -23,7 +23,15 @@ describe("Automation Practice Form", () => {
       cy.get("#userNumber").invoke('val').then(_userNumber => {
         SelectablePage.userNumber.type('29857485');
       });
-   
-    });
+      SelectablePage.clickdateOfBirthInput.click();
+      SelectablePage.selectMonth.select(1);
+      SelectablePage.selectYear.select('1930');
+      SelectablePage.selectDay.click(); 
+      SelectablePage.selectSubject.type("Economics{enter}");
+      SelectablePage.selectMusicCheckbox("hobbies-checkbox-3").check({force: true});
+      SelectablePage.uploadImage;
+
+
+   });
   })
 })
