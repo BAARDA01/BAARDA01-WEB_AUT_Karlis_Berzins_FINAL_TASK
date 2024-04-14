@@ -51,5 +51,23 @@ static get selectState(){
 static get selectCity(){
     return cy.get('#city');
  }
- 
+ static get clickClose() {
+    return cy.get('input[type=button][id="closeLargeModal"]').click();
+   }
+ static get rowValidation(){
+    cy.get('tbody').within(() => {
+
+        cy.contains('tr', 'Student Name').should('contain', 'Karlis Berzins');
+        cy.contains('tr', 'Student Email').should('contain', 'karlis@venta.365.lv');
+        cy.contains('tr', 'Gender').should('contain', 'Male');
+        cy.contains('tr', 'Mobile').should('contain', '29857485');
+        cy.contains('tr', 'Date of Birth').should('contain', '28 February,1930');
+        cy.contains('tr', 'Subjects').should('contain', 'Economics');
+        cy.contains('tr', 'Hobbies').should('contain', 'Music');
+        cy.contains('tr', 'Picture').should('contain', 'picture.jpg');
+        cy.contains('tr', 'Address').should('contain', 'Random Adress 12-3'); 
+        cy.contains('tr', 'State and City').should('contain', 'NCR Delhi');
+    
+    });
+ }
 }

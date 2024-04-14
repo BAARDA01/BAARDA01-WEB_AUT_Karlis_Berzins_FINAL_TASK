@@ -30,8 +30,11 @@ describe("Automation Practice Form", () => {
       SelectablePage.selectSubject.type("Economics{enter}");
       SelectablePage.selectMusicCheckbox("hobbies-checkbox-3").check({force: true});
       SelectablePage.uploadImage;
-
-
+      SelectablePage.writeAdress.type("Random Adress 12-3");
+      SelectablePage.selectState.type("NCR{enter}");
+      SelectablePage.selectCity.type("Delhi{enter}{enter}");
+      SelectablePage.rowValidation;
+      //SelectablePage.clickClose();
    });
   })
 })
