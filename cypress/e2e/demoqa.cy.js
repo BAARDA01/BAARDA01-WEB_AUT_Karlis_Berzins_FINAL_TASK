@@ -19,7 +19,10 @@ describe("Automation Practice Form", () => {
         SelectablePage.userEmail.type('karlis@venta.365.lv');
       });
       SelectablePage.checkRadioButton("Male").check({force: true});
-     
+      
+      cy.get("#userNumber").invoke('val').then(_userNumber => {
+        SelectablePage.userNumber.type('29857485');
+      });
    
     });
   })
